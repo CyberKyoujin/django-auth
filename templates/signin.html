@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<div class="testbox">
+
+  <form method="POST">
+    {% csrf_token %}
+    <div class="container">
+      <h1>Register</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+  
+      <label for="username"><b>Username</b></label>
+      {{ form.username }}
+  
+      <label for="email"><b>Email</b></label>
+      {{ form.email}}
+
+      <label for="pass"><b>Password</b></label>
+      {{ form.password }}
+      <hr>
+  
+      <button type="submit" class="registerbtn">Register</button>
+    </div>
+  
+    <div class="container signin">
+      <p>Already have an account? <a href="#">Sign in</a>.</p>
+    </div>
+  </form>
+
+</div>
+{% endblock %}
